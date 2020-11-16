@@ -28,16 +28,29 @@ class Superhero {
 
 static description = 'He is a hero'
 
-static showStats = function () {  console.log (Superhero);
+static showStats = function (hero) {  console.log ('Logging stats from showStats', hero);
 }
-    
+
+// constructor (name, xp){
+//     this.name = name;
+//     this.xp = xp;
+// }
+
+// changeName (name){
+//     this.name = name;
+// }
+
 constructor (name, xp){
-    this.name = name;
+    this._name = name;
     this.xp = xp;
 }
 
-changeName (name){
-    this.name = name;
+get name () {
+    return this._name
+}
+
+set name (newName) {
+    this._name = newName;
 }
 
 gainXp(amount){
@@ -46,10 +59,10 @@ gainXp(amount){
 }
 }
 
-// Superhero.descripton = 'He is a hero';
-// Superhero.showStats = function () {
-//     console.log (Superhero);
-// }
+Superhero.descripton = 'He is a hero';
+Superhero.showStats = function () {
+    console.log (Superhero);
+}
 
 console.dir (Superhero);
 
@@ -61,3 +74,8 @@ mangolier.gainXp (200);
 
 console.log (mangolier);
 
+console.log (mangolier.name)
+
+mangolier.name = 'rakamakaphone';
+
+console.log (mangolier.name);
